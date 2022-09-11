@@ -1,0 +1,98 @@
+import {BlogLayout} from '@/components/BlogLayout'
+
+export const meta = {
+	author: 'Mehul Thakkar',
+	email: 'mehulthakkar02@gmail.com',
+	date: '2021-09-26',
+	title: 'React Separation of Concern: separation of UI and business logic',
+	description:
+		'When you’re building a React application, Often you’ll find yourself in a situation where you need to separate the UI and business logic. In this article, I will show you how to do that.',
+}
+
+export default (props) => <BlogLayout meta={meta} {...props} />
+
+When you’re building a React application, Often you’ll find yourself in a situation where you need to separate the UI and business logic. In this article, I will show you how to do that. This blog is mostly inspired from one of my [answer on stack overflow](https://stackoverflow.com/questions/69332889/reactjs-separation-of-ui-and-business-logic).
+
+To explain this, I'll use a simple example of `counter`. We have a `Counter` component which has a button to increment the counter and a button to decrement the counter. The `Counter` component is responsible for rendering the UI and handling the click events. The `Counter` component is also responsible for updating the counter value. This is the UI and business logic in one component.
+
+## Traditional way
+```js
+import { useState } from "react";
+import numberWithCommas from "./helper";
+
+const Counter = () => {
+  const [count, setCount] = useState(9999);
+
+  const increaseCount = () => setCount(count + 1);
+  const decreaseCount = () => setCount(count - 1);
+
+  return (
+    <div>
+      <p>{numberWithCommas(count)}</p>
+      <div>
+        <button onClick={increaseCount}>Increase</button>
+        <button onClick={decreaseCount}>Decrease</button>
+      </div>
+    </div>
+  );
+};
+```
+
+The `numberWithCommas` function is a helper function which adds commas to the number. This is a pure function which takes a number and returns a string.
+
+```js
+const numberWithCommas = (x) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+```
+***Current Example [Link](https://codesandbox.io/s/react-counter-app-776jex?file=/src/Counter.js)***
+
+## Separation of Concern
+Using, Separation of Concern, we can separate the UI and business logic. We can create a `Counter` component which is responsible for rendering the UI and a `useCounter` hook which is responsible for updating the counter value. The `Counter` component will use the `useCounter` hook to get the counter value and the functions to update the counter value.
+
+### Counter Component
+The component should only be responsible for rendering the UI. It should not be responsible for updating the counter value.
+
+```js
+import useCounter from "./useCounter";
+
+const Counter = () => {
+  const { count, increaseCount, decreaseCount } = useCounter();
+
+  return (
+    <div>
+      <p>{count}</p>
+      <div>
+        <button onClick={increaseCount}>Increase</button>
+        <button onClick={decreaseCount}>Decrease</button>
+      </div>
+    </div>
+  );
+};
+```
+
+### useCounter Hook
+The hook should only be responsible for handling all the business logic.
+
+```js
+import { useState } from "react";
+import numberWithCommas from "./helper";
+
+const useCounter = () => {
+  const [count, setCount] = useState(9999);
+
+  const increaseCount = () => setCount(count + 1);
+  const decreaseCount = () => setCount(count - 1);
+
+  return {
+    count: numberWithCommas(count),
+    increaseCount,
+    decreaseCount
+  };
+};
+```
+***Example with separation of concern [Link](https://codesandbox.io/s/react-counter-app-776jex?file=/src/Counter.js)***
+
+## Conclusion
+This approach should segregate the view and business logic. This will make the code more readable and maintainable.
+
