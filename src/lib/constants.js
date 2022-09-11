@@ -383,3 +383,5 @@ export const TOOLS_AND_TECH = [
     ],
   },
 ];
+
+export const PATENT_DATE = '2022-05-31';

@@ -1,35 +1,13 @@
 import Head from 'next/head';
 
 import { Card } from '@/components/Card';
-import { Section } from '@/components/Section';
 import { SimpleLayout } from '@/components/SimpleLayout';
 import Link from 'next/link';
 import { PatentIcon } from '@/components/Icons';
 import { formatDate } from '@/lib/formatDate';
-
-function SpeakingSection({ children, ...props }) {
-  return (
-    <Section {...props}>
-      <div className="space-y-16">{children}</div>
-    </Section>
-  );
-}
-
-function Appearance({ title, description, event, cta, href }) {
-  return (
-    <Card as="blog">
-      <Card.Title as="h3" href={href}>
-        {title}
-      </Card.Title>
-      <Card.Eyebrow decorate>{event}</Card.Eyebrow>
-      <Card.Description>{description}</Card.Description>
-      <Card.Cta>{cta}</Card.Cta>
-    </Card>
-  );
-}
+import { PATENT_DATE } from '@/lib/constants';
 
 export default function Patent() {
-  const patentDate = '2022-03-31';
   return (
     <>
       <Head>
@@ -53,7 +31,7 @@ export default function Patent() {
           </p>
           <p className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             <span>Isaacson , et al.</span>
-            <span className="ml-auto">{formatDate(patentDate)}</span>
+            <span className="ml-auto">{formatDate(PATENT_DATE)}</span>
           </p>
           <p className="mt-8 flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             <span>Abstract</span>

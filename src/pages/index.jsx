@@ -18,7 +18,7 @@ import {
 import { generateRssFeed } from '@/lib/generateRssFeed';
 import { getAllBlogs } from '@/lib/getAllBlogs';
 import { formatDate } from '@/lib/formatDate';
-import { CERTIFICATIONS, EDUCATION, WORK } from '@/lib/constants';
+import { CERTIFICATIONS, EDUCATION, PATENT_DATE, WORK } from '@/lib/constants';
 import clsx from 'clsx';
 
 function ArrowDownIcon(props) {
@@ -48,13 +48,12 @@ function Blog({ blog }) {
 }
 
 function Patent() {
-  const patentDate = '2022-03-31';
   return (
     <div className="mt-9 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <PatentIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Patent</span>
-        <span className="ml-auto">{formatDate(patentDate)}</span>
+        <span className="ml-auto">{formatDate(PATENT_DATE)}</span>
       </h2>
       <h3 className="mt-3 text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
         Step through process of generating custom jewelry
