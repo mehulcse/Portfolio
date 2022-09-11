@@ -52,7 +52,7 @@ export const WORK = [
   {
     company: 'Xcellance Techno Labs Pvt. Ltd.',
     title: 'Intern',
-    start: 'July 2012',
+    start: 'Jul 2012',
     end: 'May 2013',
   },
 ];
