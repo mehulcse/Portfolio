@@ -13,11 +13,13 @@ import {
   BriefcaseIcon,
   PatentIcon,
   EducationIcon,
+  CertificateIcon,
 } from '@/components/Icons';
 import { generateRssFeed } from '@/lib/generateRssFeed';
 import { getAllBlogs } from '@/lib/getAllBlogs';
 import { formatDate } from '@/lib/formatDate';
-import { EDUCATION, WORK } from '@/lib/constants';
+import { CERTIFICATIONS, EDUCATION, WORK } from '@/lib/constants';
+import clsx from 'clsx';
 
 function ArrowDownIcon(props) {
   return (
@@ -82,42 +84,59 @@ function SocialLink({ icon: Icon, ...props }) {
 
 function ResumeListItem({ role }) {
   return (
-    <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        {role.logo && (
-          <Image
-            src={role.logo}
-            alt=""
-            className="h-9 w-9 rounded-full"
-            unoptimized
-          />
+    <li>
+      <Link
+        href={role?.href || '#'}
+        className={clsx(
+          'flex gap-4',
+          role?.href ? 'cursor-pointer' : 'cursor-auto'
         )}
-      </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {role.company}
-        </dd>
-        <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
-        </dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-          aria-label={`${role.start.label ?? role.start} until ${
-            role.end.label ?? role.end
-          }`}
-        >
-          <time dateTime={role.start.dateTime ?? role.start}>
-            {role.start.label ?? role.start}
-          </time>{' '}
-          <span aria-hidden="true">—</span>{' '}
-          <time dateTime={role.end.dateTime ?? role.end}>
-            {role.end.label ?? role.end}
-          </time>
-        </dd>
-      </dl>
+      >
+        <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          {role.logo && (
+            <Image
+              src={role.logo}
+              alt=""
+              className="h-9 w-9 rounded-full"
+              unoptimized
+            />
+          )}
+        </div>
+        <dl className="flex flex-auto flex-wrap gap-x-2">
+          <dt className="sr-only">Company</dt>
+          <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            {role.company}
+          </dd>
+          <dt className="sr-only">Role</dt>
+          <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+            {role.title}
+          </dd>
+          <dt className="sr-only">Date</dt>
+          <dd
+            className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+            aria-label={`${role.start.label ?? role.start} until ${
+              role.end.label ?? role.end
+            }`}
+          >
+            <time dateTime={role.start.dateTime ?? role.start}>
+              {role.start.label ?? role.start}
+            </time>{' '}
+            <span aria-hidden="true">—</span>{' '}
+            <time dateTime={role.end.dateTime ?? role.end}>
+              {role.end.label ?? role.end}
+            </time>
+          </dd>
+          {role?.credential && (
+            <>
+              <br />
+              <dt className="sr-only">Credential</dt>
+              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+                Credential ID: {role.credential}
+              </dd>
+            </>
+          )}
+        </dl>
+      </Link>
     </li>
   );
 }
@@ -128,8 +147,10 @@ function Resume({ resume, title, showDownload }) {
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         {title === 'Work' ? (
           <BriefcaseIcon className="h-6 w-6 flex-none" />
-        ) : (
+        ) : title === 'Education' ? (
           <EducationIcon className="h-6 w-6 flex-none" />
+        ) : (
+          <CertificateIcon className="h-6 w-6 flex-none" />
         )}
         <span className="ml-3">{title}</span>
       </h2>
@@ -213,6 +234,7 @@ export default function Home({ blogs }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <Resume resume={CERTIFICATIONS} title="Certifications" />
             <Resume resume={WORK} showDownload title="Work" />
             <Resume resume={EDUCATION} showDownload={false} title="Education" />
           </div>
