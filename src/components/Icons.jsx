@@ -167,22 +167,17 @@ export function PhoneIcon(props) {
 
 export function ExternalLinkIcon(props) {
   return (
-    <svg viewBox="0 0 26 26" aria-hidden="true" {...props}>
-      <g>
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <g dataName="external-link">
+        <rect width="24" height="24" opacity="0" />
         <path
           className="fill-zinc-500 stroke-zinc-500 dark:fill-zinc-100 dark:stroke-zinc-100"
-          d="M18,17.759v3.366C18,22.159,17.159,23,16.125,23H4.875C3.841,23,3,22.159,3,21.125V9.875
-		C3,8.841,3.841,8,4.875,8h3.429l3.001-3h-6.43C2.182,5,0,7.182,0,9.875v11.25C0,23.818,2.182,26,4.875,26h11.25
-		C18.818,26,21,23.818,21,21.125v-6.367L18,17.759z"
+          d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z"
         />
-        <g>
-          <path
-            className="fill-zinc-500 stroke-zinc-500 dark:fill-zinc-100 dark:stroke-zinc-100"
-            d="M22.581,0H12.322c-1.886,0.002-1.755,0.51-0.76,1.504l3.22,3.22l-5.52,5.519
-			c-1.145,1.144-1.144,2.998,0,4.141l2.41,2.411c1.144,1.141,2.996,1.142,4.14-0.001l5.52-5.52l3.16,3.16
-			c1.101,1.1,1.507,1.129,1.507-0.757L26,3.419C25.999-0.018,26.024-0.001,22.581,0z"
-          />
-        </g>
+        <path
+          className="fill-zinc-500 stroke-zinc-500 dark:fill-zinc-100 dark:stroke-zinc-100"
+          d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"
+        />
       </g>
     </svg>
   );

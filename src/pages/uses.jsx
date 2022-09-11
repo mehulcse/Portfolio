@@ -21,7 +21,7 @@ function Tool({ title, href, children }) {
     <Card as="li">
       <Card.Title as="h3" href={href}>
         {title}
-        {href && <ExternalLinkIcon className="ml-2 inline h-3 w-3" />}
+        {href && <ExternalLinkIcon className="ml-2 inline h-4 w-4" />}
       </Card.Title>
       <Card.Description>{children}</Card.Description>
     </Card>
