@@ -79,7 +79,7 @@ export default function Patent() {
               href="https://uspto.report/patent/grant/11348155"
               target="_blank"
             >
-              <Card.Cta>Read patent</Card.Cta>
+              <Card.Cta>Read more about patent</Card.Cta>
             </Link>
           </Card>
         </div>
