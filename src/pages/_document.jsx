@@ -1,4 +1,5 @@
-import { Head, Html, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -33,13 +34,26 @@ const modeScript = `
     disableTransitionsTemporarily()
     updateMode()
   }
-`
+`;
 
 export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-630DXP7G76"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-630DXP7G76');
+        `}
+        </Script>
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -56,5 +70,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

@@ -177,8 +177,8 @@ export default function Home({ blogs }) {
             I&apos;m Mehul, an inventor and a software developer based in Pune.
             I&apos;ve around 10+ years of experience in building apps and
             websites in fast-paced, collaborative environments. Skilled in JS,
-            React, Next, Remix, GraphQL, Node, Go, AWS and an AWS Certified
-            solution architect - associate.
+            React, Next, Remix, GraphQL, Node, Go and an AWS Certified solution
+            architect - associate.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
