@@ -13,7 +13,7 @@ export default (props) => <BlogLayout meta={meta} {...props} />
 
 When you’re building a React application, Often you’ll find yourself in a situation where you need to separate the UI and business logic. In this article, I will show you how to do that. This blog is mostly inspired from one of my [answer on stack overflow](https://stackoverflow.com/questions/69332889/reactjs-separation-of-ui-and-business-logic).
 
-To explain this, I'll use a simple example of `counter`. We have a `Counter` component which has a button to increment the counter and a button to decrement the counter. The `Counter` component is responsible for rendering the UI and handling the click events. The `Counter` component is also responsible for updating the counter value. This is the UI and business logic in one component.
+To explain this, I'll use a simple example of `counter`. We have a `Counter` component which has a button to increment and decrement the counter. The `Counter` component is responsible for rendering the UI, handling the click events and updating the counter value. This is the UI and business logic both in one component.
 
 ## Traditional way
 ```js
