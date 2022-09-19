@@ -45,7 +45,14 @@ const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 ```
-***Current Example [Link](https://codesandbox.io/s/react-counter-app-776jex?file=/src/Counter.js)***
+### Current Example
+
+<iframe src="https://codesandbox.io/embed/react-counter-app-776jex?fontsize=14&theme=dark&view=split"
+        style={{ width: "100%", height: "500px", border: "0", borderRadius: "4px", overflow: "hidden" }}
+        title="React Counter App"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ## Separation of Concern
 Using, Separation of Concern, we can separate the UI and business logic. We can create a `Counter` component which is responsible for rendering the UI and a `useCounter` hook which is responsible for updating the counter value. The `Counter` component will use the `useCounter` hook to get the counter value and the functions to update the counter value.
@@ -91,7 +98,15 @@ const useCounter = () => {
   };
 };
 ```
-***Example with separation of concern [Link](https://codesandbox.io/s/react-separation-of-concern-3vxv1?file=/src/Counter.js)***
+### Example with separation of concern
+
+<iframe src="https://codesandbox.io/embed/react-separation-of-concern-3vxv1?fontsize=14&theme=dark&view=split"
+        style={{ width: "100%", height: "500px", border: "0", borderRadius: "4px", overflow: "hidden" }}
+        title="React Counter App"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
 
 ## Conclusion
 This approach should segregate the view and business logic. This will make the code more readable and maintainable.
