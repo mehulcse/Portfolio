@@ -1,0 +1,55 @@
+import {BlogLayout} from '@/components/BlogLayout'
+
+export const meta = {
+	author: 'Mehul Thakkar',
+	email: 'mehulthakkar02@gmail.com',
+	date: '2023-04-14',
+	title: 'Plumbing the Depths of JavaScript: A Light-Hearted Guide to the EcmaScript Pipeline Operator',
+	description:
+		'The latest version of EcmaScript brings a host of new features that make JavaScript programming more efficient and enjoyable. Among these updates, the pipeline operator (|>) stands out as a powerful addition that streamlines the way we chain functions together. In this blog post, we\'ll explore the pipeline operator, its benefits, and how to use it in your code.',
+}
+
+export default (props) => <BlogLayout meta={meta} {...props} />
+
+## Introduction:
+Ah, JavaScript! The language that somehow manages to both enchant and infuriate developers all over the globe. It's like that mischievous little sibling you can't help but love, even when they occasionally cause you grief. And, much like that sibling, JavaScript keeps growing up and learning new tricks. Today, we're going to dive into one of its latest stunts: the EcmaScript Pipeline Operator `(|>)`. So grab your wrench and your favorite sarcastic puns, and let's get plumbing!
+
+## A Pipe Dream No More:
+The Pipeline Operator is like the plumbing of the JavaScript world, connecting your functions together to create a well-oiled data transformation machine. Imagine your code as a series of pipes, with each function acting as a section of pipe. The data flows through the pipes, getting transformed at each junction. The Pipeline Operator is the shiny new connector that makes this process a whole lot smoother. Earlier we used to do this using functional chaining, but now we can do it using the pipeline operator.
+
+## Laying the Pipes:
+Using the Pipeline Operator is as easy as pie (or pipe, if you will). Here's a simple example to get you started:
+
+```js
+const doubleTrouble = (x) => x * 2;
+const highFive = (x) => x + 5;
+
+const result = 10 |> doubleTrouble |> highFive; // 25
+```
+
+In this example, we have two functions: `doubleTrouble` and `highFive`. They're like two sections of pipe that we want to connect. The Pipeline Operator `(|>)` serves as the connector, allowing our data (the number 10) to flow from one function to the next.
+
+### Working Example
+
+<iframe src="https://codesandbox.io/embed/pipeline-operator-forked-mgihpn?fontsize=14&hidenavigation=1&theme=dark&view=split"
+        style={{ width: "100%", height: "500px", border: "0", borderRadius: "4px", overflow: "hidden" }}
+        title="Pipeline Operator"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## The Benefits of Piping Hot Code:
+You might be wondering, "Why do I need this fancy new pipe thing when I can just nest my function calls like a matryoshka doll?" Well, my friend, let's break down the benefits of adopting the Pipeline Operator into your coding toolbox:
+
+### Readability Renovation:
+The Pipeline Operator promotes a clean, linear flow of data through your functions. It's like Marie Kondo visited your code and waved her magic decluttering wand. If it sparks joy, keep it!
+### Bye-Bye, Babushka:
+Nested function calls can be a nightmare to untangle, but the Pipeline Operator nips that issue in the bud. Say goodbye to callback hell and hello to the paradise of piping!
+### Function Junction:
+Embracing the Pipeline Operator encourages a functional programming style, turning your code into a beautiful, modular ecosystem of reusable and composable functions.
+
+## Conclusion:
+The EcmaScript Pipeline Operator is a real game-changer in the realm of JavaScript. It might not solve all of your JavaScript woes, but hey, Rome wasn't built in a day (or even by a single plumber!). As you start incorporating the Pipeline Operator into your code, you'll find that it's an invaluable tool for creating cleaner, more efficient, and downright delightful JavaScript projects. So go on, get your hands dirty, and start laying those pipes!
+
+## References:
+https://github.com/tc39/proposal-pipeline-operator
