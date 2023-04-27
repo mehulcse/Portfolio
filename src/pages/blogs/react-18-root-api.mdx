@@ -1,0 +1,75 @@
+import {BlogLayout} from '@/components/BlogLayout'
+import BlogImage from "../../images/photos/React18RootAPI.png";
+import Image from 'next/image'
+
+export const meta = {
+	author: 'Mehul Thakkar',
+	email: 'mehulthakkar02@gmail.com',
+	date: '2023-04-27',
+	title: 'React 18 Series: Root-ing for the Future - Root API',
+	cover: BlogImage,
+	description:
+		'Discover the power of React 18\'s Root API in this entertaining and informative blog post. Learn how the Root API enables Concurrent Mode, automatic batching, and improved error handling, revolutionizing the way we build web apps. Packed with examples, this guide is perfect for developers eager to embrace the future with React 18.',
+}
+
+export default (props) => <BlogLayout meta={meta} {...props} />
+
+Greetings, fellow web warriors! Gather around the digital campfire and allow me to regale you with tales of React 18's Root API. In the mystical land of web development, change is constant, and with each new version of React, we gain more powerful tools to build our digital empires. So, grab your favorite beverage and prepare to embark on a journey of discovery, as we explore the wonders of the Root API, and how it differs from the days of yore (React 17, that is).
+
+<Image src={BlogImage} alt="React 18 Series: Root-ing for the Future - Root API" />
+
+## A Tale of Two Roots
+
+Once upon a time, in the ancient days of React 17, mounting a component to the DOM was a simple affair. We'd call our trusty `ReactDOM.render()` function, and off we'd go. But then React 18 burst onto the scene, bringing with it the Root API and opening up a world of new possibilities.
+
+Let's travel back in time and look at how we used to do things in React 17:
+
+```js
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+Ah, the good ol' days. But fear not, for with React 18, the Root API has arrived to make our lives even better. Behold, the new and improved way of rendering components in React 18:
+
+```js
+import {createRoot} from 'react-dom';
+import App from './App';
+
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+
+By Odin's beard! What is this sorcery? The Root API, my friends! Instead of using `ReactDOM.render()`, we now have the power of `createRoot()` and its trusty friend, `render()`. But what does this mean for us, the valiant web developers of the realm? Let's find out.
+
+## The Root of All Good Things
+With great power comes great responsibility, and the Root API is no exception. The new API unlocks a treasure trove of features, allowing us to do things that were once merely the stuff of legend.
+### Concurrent Mode Unleashed
+One of the most significant benefits of the Root API is that it enables Concurrent Mode by default. In this magical new realm, React can work on multiple tasks simultaneously, leading to smoother, more responsive apps. No more janky user interfaces or sluggish performance—just pure, unadulterated web goodness.
+### Automatic Batching
+The Root API also introduces automatic batching for state updates. Remember the days when you had to manually batch your updates to avoid unnecessary re-renders? Fret no more! React 18's Root API has got you covered, batching your state updates like a pro and ensuring your app stays as fast as a cheetah on roller skates.
+### Error Handling and More
+Thanks to the Root API, handling errors and dealing with suspense is now easier than ever. With the `createRoot()` function, we can create multiple roots for different parts of our app, each with its own error boundary and suspense configuration. The result? A more robust, more resilient app that can weather the storms of user interaction and API calls without breaking a sweat.
+
+## A Brighter Future with the Root API
+So, my fellow web warriors, the time has come to embrace the future and harness the power of the Root API. No longer must we toil with the limitations of React 17, for we now have a new champion in our corner: React 18.
+
+With its support for Concurrent Mode, automatic batching, and improved error handling, the Root API promises to revolutionize the way we build web apps. So go forth, and conquer the digital realm with the might of the Root API at your side. Together, we shall create a brighter, more responsive, and more delightful future for users across the kingdom.
+
+As we bid farewell to the days of `ReactDOM.render()` and welcome the era of `createRoot()`, let us raise a toast to progress, innovation, and the indomitable spirit of web developers everywhere. May our apps be faster, our code be cleaner, and our dreams be ever grander.
+
+Now, my friends, go forth and conquer the world of web development with React 18's Root API in your arsenal. Remember that with great power comes the potential for even greater apps, and that your quest for digital mastery has only just begun. So sharpen your wits, polish your skills, and set your sights on the horizon, for there are countless adventures yet to be had in the realm of web development. Happy coding! #TechHappily
+
+## References:
+- **React 18 Announcement:** The official announcement from the React team introduces the new features and improvements in React 18, including the Root API. This is an excellent starting point to understand the motivation behind the API change:
+	- https://reactjs.org/blog/2021/06/08/the-plan-for-react-18.html
+- **React 18 Working Group:** The React 18 Working Group repository on GitHub is where the React team and the community collaborate to discuss React 18's new features, including the Root API. This repository contains valuable discussions and examples:
+	- https://github.com/reactwg/react-18
+- **Concurrent Mode:** Concurrent Mode is a significant feature enabled by the Root API in React 18. The official React documentation provides an in-depth explanation of Concurrent Mode and how it improves the user experience:
+	- https://reactjs.org/docs/concurrent-mode-intro.html
+- **React 18 Upgrade Guide:** The React team has put together a guide to help you upgrade your React applications to version 18. This guide covers the steps to follow, including migrating to the new Root API:
+	- https://react.dev/blog/2022/03/08/react-18-upgrade-guide
+
+These resources should help you gain a deeper understanding of React 18's Root API, its benefits, and how it differs from the previous approach in React 17.
+
