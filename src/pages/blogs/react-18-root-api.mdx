@@ -1,5 +1,5 @@
 import {BlogLayout} from '@/components/BlogLayout'
-import BlogImage from "@/images/photos/React18RootAPI.png";
+import BlogImage from "../../images/photos/React18RootAPI.png";
 import Image from 'next/image'
 import Head from 'next/head';
 
@@ -9,7 +9,7 @@ export const meta = {
 	email: 'mehulthakkar02@gmail.com',
 	date: '2023-04-27',
 	title: 'React 18 Series: Root-ing for the Future - Root API',
-	cover: "../../images/photos/React18RootAPI.png",
+	cover: BlogImage,
 	description:
 		'Discover the power of React 18\'s Root API in this entertaining and informative blog post. Learn how the Root API enables Concurrent Mode, automatic batching, and improved error handling, revolutionizing the way we build web apps. Packed with examples, this guide is perfect for developers eager to embrace the future with React 18.',
 }
@@ -17,7 +17,7 @@ export const meta = {
 export default (props) => <BlogLayout meta={meta} {...props} />
 
 <Head>
-	<meta name="image" property="og:image" content={BlogImage} />
+	<meta name="image" property="og:image" content="../../images/photos/React18RootAPI.png" />
 	<meta property="article:publish_date" content="2023-04-27" />
 	<meta property="article:published_time" content="2023-04-27T00:00:00+00:00" />
 	<meta property="article:author" content="Mehul Thakkar" />
