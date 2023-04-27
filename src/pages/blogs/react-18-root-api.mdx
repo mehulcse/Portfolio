@@ -1,5 +1,5 @@
 import {BlogLayout} from '@/components/BlogLayout'
-import BlogImage from "../../images/photos/React18RootAPI.png";
+import BlogImage from "@/images/photos/React18RootAPI.png";
 import Image from 'next/image'
 import Head from 'next/head';
 
@@ -17,7 +17,7 @@ export const meta = {
 export default (props) => <BlogLayout meta={meta} {...props} />
 
 <Head>
-	<meta name="image" property="og:image" content="../../images/photos/React18RootAPI.png" />
+	<meta name="image" property="og:image" content={BlogImage} />
 	<meta property="article:publish_date" content="2023-04-27" />
 	<meta property="article:published_time" content="2023-04-27T00:00:00+00:00" />
 	<meta property="article:author" content="Mehul Thakkar" />
