@@ -194,11 +194,15 @@ export default function Home({ blogs }) {
             entrepreneur.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Mehul, an inventor and a software developer based in Pune.
-            I&apos;ve around 10+ years of experience in building apps and
-            websites in fast-paced, collaborative environments. Skilled in JS,
-            React, Next, Remix, GraphQL, Node, Go and an AWS Certified solution
-            architect - associate.
+            Greetings, I&apos;m Mehul, a seasoned software developer and
+            creative inventor residing in Pune. With a decade of professional
+            experience under my belt, I specialize in crafting intricate
+            applications and dynamic websites that thrive in high-speed,
+            collaborative settings. My expertise lies in an array of programming
+            languages and technologies, including but not limited to JavaScript
+            (JS), React, Next.js, Remix, GraphQL, and Node.js. In addition, I am
+            proficient in AWS and hold an AWS Certified Solution Architect -
+            Associate accreditation.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
