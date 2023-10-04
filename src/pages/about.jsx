@@ -36,7 +36,7 @@ export default function About() {
         <title>About - Mehul Thakkar</title>
         <meta
           name="description"
-          content="I'm Mehul Thakkar. I'm a software engineer, lives in Pune India."
+          content="I'm Mehul Thakkar. I'm a software engineer, lives in Pune India. "
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
